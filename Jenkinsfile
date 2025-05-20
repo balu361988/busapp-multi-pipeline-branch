@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "balu361988/busapp"
         VERSION = "prod"
-        DOCKERHUB_CREDENTIALS = "dockerhub-creds" // Jenkins credential ID
+        DOCKERHUB_CREDENTIALS = "dockerhub-creds"
     }
 
     stages {
