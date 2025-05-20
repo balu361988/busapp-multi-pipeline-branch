@@ -2,5 +2,5 @@
 
 version=dev
 
-sudo docker build -t learnitguide/busapp:${version} .
-sudo docker push learnitguide/busapp:${version}
+sudo docker build -t balu361988/busapp:${version} .
+sudo docker push balu361988/busapp:${version}
