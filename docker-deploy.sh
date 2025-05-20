@@ -1,10 +1,10 @@
 #!/bin/bash
 
-version=dev
-env="dev"
+version=prod
+env="prod"
 
 if sudo docker ps -a --format '{{.Names}}' | grep "${env}"
 then
 sudo docker stop ${env} && sudo docker rm ${env}
 fi
-sudo docker run -it -d -p 8000:8001 --name ${env} learnitguide/busapp:${version}
+sudo docker run -it -d -p 9000:8001 --name ${env} learnitguide/busapp:${version}
