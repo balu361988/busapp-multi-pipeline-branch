@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "balu361988/busapp"
         VERSION = "prod"
-        DOCKERHUB_CREDENTIALS = "dockerhub-creds"
+        DOCKERHUB_CREDENTIALS = "docker-hub"
     }
 
     stages {
