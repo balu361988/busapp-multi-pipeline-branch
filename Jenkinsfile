@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "balu361988/busapp"
         VERSION = "prod"
-        DOCKERHUB_CREDENTIALS = "dockerhub-creds"
+        DOCKERHUB_CREDENTIALS = "dockerhub-creds" // Jenkins credential ID
     }
 
     stages {
@@ -22,8 +22,9 @@ pipeline {
 
         stage('Push Docker Image to DockerHub') {
             steps {
-                withDockerRegistry([credentialsId: "${DOCKERHUB_CREDENTIALS}", url: 'https://index.docker.io/v1/']) {
+                withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
                         docker push ${IMAGE_NAME}:${VERSION}
                     '''
                 }
