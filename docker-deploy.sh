@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=development
-env="development"
+version=dev
+env="dev"
 
 if sudo docker ps -a --format '{{.Names}}' | grep "${env}"
 then
