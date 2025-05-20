@@ -2,5 +2,5 @@
 
 version=master
 
-docker build -t learnitguide/busapp:${version} .
-docker push learnitguide/busapp:${version}
+docker build -t balu361988/busapp:${version} .
+docker push balu361988/busapp:${version}
